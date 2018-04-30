@@ -1,30 +1,46 @@
-import { expect } from 'chai';
+import chai from 'chai';
 import squareAllNumbers from '../app/app';
 import { describe } from 'mocha';
 
+chai.should();
+
+
 describe('Test for squaring all numbers', () => {
   it('must accept only an interger', (done) => {
-    expect(squareAllNumbers().equal('method parameter must be an integer'));
+    const output = squareAllNumbers();
+    output.should.eql('method parameter must be an integer');
+    done();
   })
 
   it('must accept only an interger', (done) => {
-    expect(squareAllNumbers('9119').equal('method parameter must be an integer'));
+    const output = squareAllNumbers('9119');
+    console.log(output, 'new output')
+    output.should.eql('method parameter must be an integer');
+    done();
   })
 
   it('must accept only an interger', (done) => {
-    expect(squareAllNumbers(9119.99).equal('method parameter must be an integer'));
+    const output = squareAllNumbers(9119.99);
+    output.should.eql('method parameter must be an integer');
+    done();
   })
 
   it('must accept only an interger', (done) => {
-    expect(squareAllNumbers([9119]).equal('method parameter must be an integer'));
+    const output = squareAllNumbers([9119]);
+    output.should.eql('method parameter must be an integer');
+    done();
   })
 
   it('it should return 811181', (done) => {
-    expect(squareAllNumbers(9119).equal(811181));
+    const output = squareAllNumbers(9119);
+    output.should.eql(811181);
+    done();
   })
 
   it('it should return 25258136', (done) => {
-    expect(squareAllNumbers(5596).equal(25258136));
+    const output = squareAllNumbers(5596);
+    output.should.eql(25258136);
+    done();
   })
 
 })
