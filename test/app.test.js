@@ -6,27 +6,20 @@ chai.should();
 
 
 describe('Test for squaring all numbers', () => {
-  it('must accept only an interger', (done) => {
+  it('should raise an error if the parameter is undefined', (done) => {
     const output = squareAllNumbers();
     output.should.eql('method parameter must be an integer');
     done();
   })
 
-  it('must accept only an interger', (done) => {
+  it('should raise an error if the parameter is a string', (done) => {
     const output = squareAllNumbers('9119');
-    console.log(output, 'new output')
     output.should.eql('method parameter must be an integer');
     done();
   })
 
-  it('must accept only an interger', (done) => {
+  it('should raise an error if the parameter is a number but not an integer', (done) => {
     const output = squareAllNumbers(9119.99);
-    output.should.eql('method parameter must be an integer');
-    done();
-  })
-
-  it('must accept only an interger', (done) => {
-    const output = squareAllNumbers([9119]);
     output.should.eql('method parameter must be an integer');
     done();
   })
